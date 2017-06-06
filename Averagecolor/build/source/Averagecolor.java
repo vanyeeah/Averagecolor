@@ -26,12 +26,14 @@ public void setup() {
   video.start();
 }
 
-public void mousePressed(){
+public void captureEvent(Capture video){
   video.read();
 }
 
 public void draw() {
   background(0);
+
+
   image(video, 0, 0, width, height);
   loadPixels();
   // Since we are going to access the image's pixels too
@@ -55,11 +57,12 @@ public void draw() {
 
 fill(r,g,b);
 rect(25, 25, 50, 50);
+
     }
   }
 
 }
-  public void settings() {  size (600, 400); }
+  public void settings() {  size (300, 200); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Averagecolor" };
     if (passedArgs != null) {

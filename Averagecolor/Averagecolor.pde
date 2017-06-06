@@ -3,17 +3,19 @@ Capture video;
 
 
 void setup() {
-  size (600, 400);
+  size (300, 200);
   video = new Capture(this, 640, 480, 30);
   video.start();
 }
 
-void mousePressed(){
+void captureEvent(Capture video){
   video.read();
 }
 
 void draw() {
   background(0);
+
+
   image(video, 0, 0, width, height);
   loadPixels();
   // Since we are going to access the image's pixels too
@@ -37,6 +39,7 @@ void draw() {
 
 fill(r,g,b);
 rect(25, 25, 50, 50);
+
     }
   }
 
